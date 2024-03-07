@@ -2,7 +2,6 @@
 
 let canvasElem = document.getElementById('chart');
 
-function renderChart() {
   let data = new AppState();
   data.loadItems();
 
@@ -25,9 +24,7 @@ function renderChart() {
     colorsArray.push(colorsArray[i]);
   }
 
-  const ctx = document.getElementById('canvas');
-  Chart.defaults.color = 'white';
-  const myChart = new Chart(ctx, {
+  const myChart = new Chart(canvasElem, {
     type: 'bar',
     data: {
       labels: namesArray,
@@ -36,31 +33,14 @@ function renderChart() {
         data: viewsAndVotesArray,
         backgroundColor: colorsArray,
         borderWidth: 1,
-        text: 'white'
       }]
     },
     options: {
       scales: {
         y: {
-          grid: {
-            color: 'white'
-          },
-          ticks: {
-            color: 'white'
-          },
           beginAtZero: true
-        },
-        x: {
-          grid: {
-            color: 'white'
-          },
-          ticks: {
-            color: 'white'
-          }
         }
       }
     }
   });
-}
 
-renderChart();
