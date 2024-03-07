@@ -1,1 +1,68 @@
-/* TODO: Make it awesome */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 15% 1fr 15%; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "header header header"
+    "section section section"
+    "footer footer footer"; 
+}
+
+header {
+  grid-area: header;
+  border-bottom: 3px solid dimgray;
+  background-color: rgb(217, 58, 0);
+  color: white;
+  text-align: center;
+
+  h1 {
+    font-size: 24pt;
+    margin: 1em;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      li {
+        margin: 0 5em;
+      }
+
+      li a:hover {
+        list-style-type: none;
+      }
+    }
+  }
+}
+
+section {
+  grid-area: section;
+
+  display: flex;
+  flex-direction: row;
+
+  img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+footer {
+  grid-area: footer;
+  border-top: 3px solid dimgray;
+  background-color: darkgray;
+  color: black;
+  text-align: center;
+
+  p {
+    margin: 3em;
+  }
+}
